@@ -11,7 +11,8 @@
    --button-hover-background: #188CE8;
    --line-color: #ECECEC;
    --second-line-color: #EEEEEE;
-   --shadow-color-one: rgba(0, 0, 0, 25%)
+   --shadow-color-one: rgba(0, 0, 0, 25%);
+   --overlay-color-one: rgba(47, 48, 58, 40%)
 }
 *,
 *::before,
@@ -94,7 +95,15 @@ body {
 }
 .contacts-menu {
     display: flex;
-    margin-left: 344px;
+    margin-left: 318px;
+}
+.icon-envelope {
+    width: 16px;
+    height: 12px;
+}
+.icon-phon {
+    width: 10px;
+    height: 16px;
 }
 .contacts {
     display: block;
@@ -110,13 +119,18 @@ body {
     color: var(--hover-color)
 }
 .header-phon {
-    margin-left: 50px;
+    margin-left: 30px;
 }
 .herosection {
     padding-top: 200px;
     padding-bottom: 200px;
-    background-color: var(--hero-footer-background);
     text-align: center;
+    background-color: var(--hero-footer-background);
+    background-image: 
+        linear-gradient(var(--overlay-color-one), var(--overlay-color-one)),
+        url(../images/herobackground.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 .hero {
     font-weight: 900;
@@ -146,6 +160,7 @@ body {
 }
 .button:hover, .button:focus {
     background-color: var(--button-hover-background);
+    box-shadow: 0px 4px 4px 0px var(--shadow-color-one);
 }
 .visually-hidden {
     position: absolute;
@@ -162,6 +177,17 @@ body {
 .feature {
     display: flex;
     gap: 30px;
+}
+.features-icon {
+    padding: 25px 100px;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: var(--secondary-background);
+}
+.icon-companytagline {
+    width: 70px;
+    height: 70px;
 }
 .features {
     font-weight: 700;
@@ -219,6 +245,29 @@ body {
     letter-spacing: 0.03em;
     color: var(--secondary-color);
     text-align: center;
+}
+.icon-sociallinks-list {
+    display: flex;
+    margin: 16px 32px 0px 32px;
+    gap: 10px;
+}
+.icon-sociallinks {
+    width: 44px;
+    height: 44px;
+    padding: 11px 11px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    
+   
+}
+.icon-sociallinks:hover::before,
+.icon-sociallinks:hover::after {
+
+}
+.icon-sociallinks:focus::before,
+.icon-sociallinks:focus::after {
+    fill: var(--fourth-color);
+
 }
 .footer {
     background-color: var(--hero-footer-background);

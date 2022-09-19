@@ -8,10 +8,12 @@
    --hover-color: #2196F3;
    --primary-background: #F5F5F5;
    --secondary-background: #F5F4FA;
-   --hero-footer-background: #2F303A;
+   --hero-background: #C4C4C4;
+   --footer-background: #2F303A;
    --button-hover-background: #188CE8;
    --line-color: #ECECEC;
    --second-line-color: #EEEEEE;
+   --sociallink-color: #AFB1B8;
    --shadow-color-one: rgba(0, 0, 0, 0.25);
    --shadow-color-two: rgba(0, 0, 0, 12%);
    --shadow-color-three: rgba(0, 0, 0, 14%);
@@ -53,13 +55,6 @@ body {
 .section {
     padding-top: 94px;
     padding-bottom: 94px;
-}
-.icon {
-    fill: var(--secondary-color);
-}
-.icon:hover, 
-.icon:focus {
-    fill: var(--hover-color);
 }
 .header {
     border-bottom: 1px solid var(--line-color);
@@ -124,6 +119,7 @@ body {
 .contacts:hover, 
 .contacts:focus {
     color: var(--hover-color);
+    fill: currentColor;
 }
 .header-phon {
     margin-left: 30px;
@@ -132,12 +128,15 @@ body {
     padding-top: 200px;
     padding-bottom: 200px;
     text-align: center;
-    background-color: var(--hero-footer-background);
+    background-color: var(--hero-background);
     background-image:
         linear-gradient(var(--overlay-color-one), var(--overlay-color-one)),
         url(../images/herobackground.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    background-size: cover;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 .hero {
     font-weight: 900;
@@ -164,10 +163,10 @@ body {
     padding: 10px 32px;
     border-radius: 4px;
     border-color: transparent;
+    box-shadow: 0px 4px 4px 0px var(--shadow-color-one);
 }
 .button:hover, .button:focus {
     background-color: var(--button-hover-background);
-    box-shadow: 0px 4px 4px 0px var(--shadow-color-one);
 }
 .visually-hidden {
     position: absolute;
@@ -211,7 +210,9 @@ body {
 .whatwedo-section {
     padding-top: 0;
 }
-.whatwedo, .ourteam, .regular-customers {
+.whatwedo, 
+.ourteam, 
+.regular-customers {
     text-align: center;
     font-weight: 700;
     font-size: 36px;
@@ -259,10 +260,11 @@ body {
     color: var(--secondary-color);
     text-align: center;
 }
-.icon-sociallinks-list {
+.sociallinks-list {
     display: flex;
-    margin: 16px 32px 0 32px;
+    justify-content: center;
     gap: 10px;
+    margin-top: 16px;
 }
 .sociallink {
     display: flex;
@@ -271,15 +273,16 @@ body {
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+    fill: var(--sociallink-color);
 }
 .sociallink:hover, 
 .sociallink:focus {
     background-color: var(--hover-color);
+    fill: var(--fourth-color);
 }
-.icon-sociallinks:hover, 
-.icon-sociallinks:focus {
-    fill: currentColor;
-    fill: var(--secondary-background);
+.icon-sociallinks {
+    width: 20px;
+    height: 20px;
 }
 .regular-customers-list {
     display: flex;
@@ -294,14 +297,19 @@ body {
     justify-content: center;
     border: 1px solid var(--secondary-color);
     border-radius: 4px;
+    fill: var(--sociallink-color);
 }
 .regular-customer-link:hover,
 .regular-customer-link:focus {
     border: 1px solid var(--hover-color);
+    fill: var(--hover-color);
 }
-
+.regular-customer-icon {
+    width: 106px;
+    height: 60px;
+}
 .footer-background {
-    background-color: var(--hero-footer-background);
+    background-color: var(--footer-background);
 }
 .footer {
     padding-top: 60px;
@@ -368,17 +376,15 @@ body {
     border-radius: 50%;
     background: var(--footer-color-two);
 }
-.footer-sociallink:hover, .footer-sociallink:focus {
+.footer-sociallink:hover, 
+.footer-sociallink:focus {
     background: var(--hover-color);
 }
 .footer-icon-sociallinks {
-    
-
+    width: 20px;
+    height: 20px;
     fill: var(--fourth-color);
 }
-.footer-icon-sociallinks:hover, .footer-icon-sociallinks:focus {
-    fill: var(--fourth-color);
-}   
 .btn {
     display: flex;
     justify-content: center;
@@ -396,20 +402,34 @@ body {
     letter-spacing: 0.03em;
     color: var(--primary-color);
     padding: 6px 22px;
-    box-shadow: 0px 4px 4px 0px var(--shadow-color-one);
+    
 }
-.portfolio-button:hover, .portfolio-button:focus {
+.portfolio-button:hover, 
+.portfolio-button:focus {
     color: var(--fourth-color); 
     background-color: var(--hover-color);
+    box-shadow: 
+        0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-.portfolio-imgs {
+.portfolio-list {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 30px;
 }
+.portfolio-container {
+    
+}
+.portfolio-img {
+    display: block;
+}
 .portfolio-img:hover {
-    box-shadow: 0px 4px 4px 0px var(--shadow-color-one);
+    box-shadow: 
+        0px 1px 1px rgba(0, 0, 0, 0.12),
+        0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .project {
     padding: 20px 24px;
